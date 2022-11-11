@@ -3,7 +3,6 @@ const axios = require("axios");
 const shortid = require("shortid");
 const validurl = require("valid-url");
 const redis = require("redis");
-// const { promisify } = require("util");
 
 const redisClient = redis.createClient({
   url: "redis://default:hK7UbOAOQKQcTYBUWZgmhSeR0HkX6I9V@redis-17960.c264.ap-south-1-1.ec2.cloud.redislabs.com:17960",
@@ -12,24 +11,6 @@ redisClient.connect();
 redisClient.on("connect", async function () {
   console.log("Connected to Redis..");
 });
-//Connect to redis
-// const redisClient = redis.createClient(
-//   17960,
-//   "redis-17960.c264.ap-south-1-1.ec2.cloud.redislabs.com",
-//   { no_ready_check: true }
-// );
-// redisClient.auth("hK7UbOAOQKQcTYBUWZgmhSeR0HkX6I9V", function (err) {
-//   if (err) throw err.message;
-// });
-// redisClient.on('error', (err) => console.log('Redis Client Error', err));
-
-//1. connect to the server
-//2. use the commands :
-
-//Connection setup for redis
-
-// const SET_ASYNC = promisify(redisClient.SET).bind(redisClient);
-// const GET_ASYNC = promisify(redisClient.GET).bind(redisClient);
 
 const webhost = "http://localhost:3000/";
 
